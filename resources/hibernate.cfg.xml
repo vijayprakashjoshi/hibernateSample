@@ -13,8 +13,19 @@
    <property name="hibernate.connection.username">root</property>
    <property name="hibernate.connection.password">root</property>
 
+   <!-- Echo all sql queries executed -->
+   <property name="show_sql">true</property>
+
+   <!-- Drop and re-create database schema on startup -->
+   <property name="hbm2ddl.auto">create</property>
+
    <!-- List of XML mapping files -->
-   <mapping resource="Employee.hbm.xml"/>
+   <!-- <mapping resource="Employee.hbm.xml"/> -->
+   
+   <!-- Names the annotated entity Classes -->
+   <mapping class="com.java.hibernate.UserDetails"/>
+
+
 
 </session-factory>
 </hibernate-configuration>
