@@ -24,7 +24,7 @@
    
    <!-- Names the annotated entity Classes -->
    <mapping class="com.java.hibernate.UserDetails"/>
-
+   
 
 
 </session-factory>
