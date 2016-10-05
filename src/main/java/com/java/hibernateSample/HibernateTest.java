@@ -22,8 +22,11 @@ public class HibernateTest {
 		officeAddress.setCity("udaipur office");
 		officeAddress.setState("Rajasthan office");
 
-		user.setHomeAddress(homeAddress);
-		user.setOfficeAddress(officeAddress);
+//		user.setHomeAddress(homeAddress);
+//		user.setOfficeAddress(officeAddress);
+
+		user.getListOfAddress().add(homeAddress);
+		user.getListOfAddress().add(officeAddress);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory(); 
 		Session session = sessionFactory.openSession();

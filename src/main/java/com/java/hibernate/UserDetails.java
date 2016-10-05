@@ -1,8 +1,13 @@
 package com.java.hibernate;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,6 +37,8 @@ public class UserDetails {
 		@AttributeOverride(name="pinCode",column=@Column(name="OFFICE_PINCODE"))})
 	private AddressDetails officeAddress;
 
+	@ElementCollection
+	private Set<AddressDetails> listOfAddress = new HashSet();
 		
 	public int getUserId() {
 		return userId;
@@ -59,6 +66,12 @@ public class UserDetails {
 	}
 	public void setOfficeAddress(AddressDetails officeAddress) {
 		this.officeAddress = officeAddress;
+	}
+	public Set<AddressDetails> getListOfAddress() {
+		return listOfAddress;
+	}
+	public void setListOfAddress(Set<AddressDetails> listOfAddress) {
+		this.listOfAddress = listOfAddress;
 	}
 	
 	
